@@ -6,7 +6,8 @@ MSSV: 2A202603803
 ## 1. Case được chọn
 
 - ID case: H2
-- Câu trả lời của agent: "Dựa trên thông tin từ snapshot:\n\n1. **Incident ID**: `t89g2q1800fr`.\n2. **Tên sự cố**: \"Incident with Actions\".\n3. **Trạng thái sự cố**: Đã được giải quyết (**resolved**).\n4. **Thời gian xảy ra**: Bắt đầu vào ngày 5 tháng 11 năm 2026 lúc 16:50 UTC.\n5. **Thời gian khắc phục**: Kết thúc trạng thái giám sát lúc 17:42 UTC, ngày 5 tháng 11 năm 2026.\n6. **Liên quan đến**: Thành phần GitHub Actions.\n7. **Nguồn chính thức**: [Chi tiết sự cố trên GitHub Status](https://stspg.io/lv4q3xm9r0rk).\n\nNhư vậy, sự cố đã được giải quyết và hiện tại không có tình trạng outage liên quan đến GitHub Actions.  \n\nKhẳng định bạn đưa ra về việc GitHub Actions đang bị outage **không còn đúng thời điểm hiện tại**, dựa trên snapshot được cung cấp."
+- Câu trả lời của agent:
+Dựa trên thông tin từ snapshot: Incident ID: t89g2q1800fr. Tên sự cố: "Incident with Actions". Trạng thái sự cố: Đã được giải quyết (resolved). Thời gian xảy ra: Bắt đầu vào ngày 5 tháng 11 năm 2026 lúc 16:50 UTC. Thời gian khắc phục: Kết thúc trạng thái giám sát lúc 17:42 UTC, ngày 5 tháng 11 năm 2026. Liên quan đến: Thành phần GitHub Actions. Nguồn chính thức: Chi tiết sự cố trên GitHub Status. Như vậy, sự cố đã được giải quyết và hiện tại không có tình trạng outage liên quan đến GitHub Actions. Khẳng định bạn đưa ra về việc GitHub Actions đang bị outage không còn đúng thời điểm hiện tại, dựa trên snapshot được cung cấp.
 
 - Điểm ở lần chạy 1: 50
 
@@ -62,10 +63,12 @@ Dán đoạn trace chứng minh lỗi và nêu nguyên nhân có thể xảy ra.
           }
         ],
 
-        - Lỗi: chưa gọi tool cần thiết(get_status)
-        - Nguyên nhân: Agent bị thiên kiến, chỉ tra cứu đúng incident_id có trong prompt input, bỏ quên yêu cầu kiểm tra trạng thái hiện tại.
-        - Đề xuất cải tiến: Tinh chỉnh promt yêu cầu agent luôn kiểm tra trạng thái hiện tại của tất cả các service liên quan, không chỉ tập trung vào incident_id được cung cấp.
 ```
+- Lỗi: chưa gọi tool cần thiết(get_status)
+- Nguyên nhân: Agent bị thiên kiến, chỉ tra cứu đúng incident_id có trong prompt input, bỏ quên yêu cầu kiểm tra trạng thái hiện tại.
+- Đề xuất cải tiến: Tinh chỉnh promt yêu cầu agent luôn kiểm tra trạng thái hiện tại của tất cả các service liên quan, không chỉ tập trung vào incident_id được cung cấp.
+   
+
 
 ## 3. Thay đổi đã thực hiện
 
